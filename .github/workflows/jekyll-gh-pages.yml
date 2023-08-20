@@ -36,8 +36,15 @@ jobs:
           node-version: '16'
       - name: Install dependencies
         run: npm install
-      - name: Build
+      - name: Build Angular Application
         run: npm run build
+      - name: Build with Jekyll
+        uses: actions/jekyll-build-pages@v1
+        with:
+          source: ./dist
+          destination: ./_site
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
 
   # Deployment job
   deploy:
@@ -50,6 +57,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
-        with:
-          branch: gh-pages
-          folder: dist
