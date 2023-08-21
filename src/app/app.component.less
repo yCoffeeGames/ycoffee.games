@@ -1,12 +1,51 @@
-div {
+#Root {
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
     color: white;
+    h1 {
+        font-size: 5em;
+    }
 }
 
-h1 {
-    font-size: 5em;
+#Title {
+    background: fade(white, 25%);
+    border-radius: 12px;
+    text-align: left;
+    padding: 24px;
+    display: block;
+    text-decoration: none;
+    color: white;
+    transition: all 0.2s;
+    
+    * {
+        display: inline-block;
+    }
+
+    :nth-child(2) {
+        float: right;
+    }
+}
+
+#Title:hover {
+    transform: scale(1.1);
+}
+
+#Title:active {
+    transform: scale(1.05);
+}
+
+#Banner {
+    position: absolute;
+    bottom: 24px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    a {
+        padding: 12px;
+        text-decoration: none;
+        color: white;
+    }
 }
